@@ -24,6 +24,9 @@
  */
 
 /**
+ * TODO URGENTE: Desacoplar configurações dos eixos
+ * TODO URGENTE: Adicionar possibilidade de mudar configurações pelo terminal
+ * TODO Mapear configurações na flash (não voláteis)
  * TODO Input
  * TODO EXTI
  * TODO Endstops
