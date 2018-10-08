@@ -24,14 +24,11 @@
  */
 
 /**
- * TODO Arrumar função usDelay
- * TODO Help
  * TODO Input
  * TODO EXTI
  * TODO Endstops
  * TODO Homing
  * TODO Considerar movimentação por lista e interrupção
- *
  */
 
 #include "stm32f4xx_hal.h"
@@ -549,8 +546,10 @@ void line(float newx,float newy) {
     }
 
     //Atualizar as posições
-    xPos = newx;
-    yPos = newy;
+    xPos += dx;
+    yPos += dy;
+//    xPos = newx;
+//    yPos = newy;
 }
 
 /**
@@ -561,8 +560,8 @@ void help() {
 	serial->println("Comandos implementados:");
 
 	//Comandos G
-	serial->println("G0 (Xn) (Yn) (Fn)\t-\tMovimento linear");
-	serial->println("G1 (Xn) (Yn) (Fn)\t-\tMovimento linear");
+	serial->println("G0 (Xn) (Yn) (Fn)\t-\tMovimento linear (graus, graus, graus/minuto)");
+	serial->println("G1 (Xn) (Yn) (Fn)\t-\tMovimento linear (graus, graus, graus/minuto)");
 	serial->println("G4 (Pn)\t\t\t-\tEspera 'n' segundos");
 	serial->println("G28 (X0) (Y0)\t\t-\tMove o eixo para o fim de curso");
 	serial->println("G90\t\t\t-\tMudar para modo absoluto de posicionamento");
